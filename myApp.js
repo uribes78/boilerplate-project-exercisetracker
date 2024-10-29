@@ -114,7 +114,7 @@ const api = () => {
                     res.status(200).json({
                         username: user.username,
                         description: description,
-                        duration: duration,
+                        duration: Number(duration),
                         date: log.date.toDateString(),
                         _id: user._id.toString()
                     }).end();
