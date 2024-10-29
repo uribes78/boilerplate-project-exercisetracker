@@ -111,7 +111,7 @@ const api = () => {
                 user.count = user.log.length;
 
                 user.save().then((result) => {
-                    console.log("Exercise log stored -> ",result);
+                    log._id = user._id.toString();
                     log.username = user.username;
                     log.date = log.date.toDateString();
 
