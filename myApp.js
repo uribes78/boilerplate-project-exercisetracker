@@ -111,11 +111,13 @@ const api = () => {
                 user.count = user.log.length;
 
                 user.save().then((result) => {
-                    log._id = user._id.toString();
-                    log.username = user.username;
-                    log.date = log.date.toDateString();
-
-                    res.status(200).json(log).end();
+                    res.status(200).json({
+                        username: user.username,
+                        description: description,
+                        duration: duration,
+                        date: log.date.toDateString(),
+                        _id: user._id.toString()
+                    }).end();
                 });
             }).catch(err => next(err));
     });
